@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: simple-spring-api
+
+server:
+  port: 8080
