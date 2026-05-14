@@ -5,6 +5,9 @@
 # Log file
 *.log
 
+#Maven Artifacts 
+target/
+
 # BlueJ files
 *.ctxt
 

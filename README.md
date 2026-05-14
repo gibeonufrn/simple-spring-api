@@ -20,9 +20,3 @@ GET http://localhost:8080/api/health
 ```bash
 mvn clean package
 ```
-
-## CI/CD
-
-O workflow em `.github/workflows/ci-cd.yml` executa build e testes automaticamente em `push` e `pull_request` para a branch `main`.
-
-Em push para `main`, o `.jar` gerado é publicado como artifact do GitHub Actions.
