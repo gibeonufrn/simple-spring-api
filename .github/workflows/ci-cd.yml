@@ -31,7 +31,7 @@ jobs:
           name: simple-spring-api-jar
           path: target/*.jar
   publish:
-    needs: [build]
+    needs: [build-and-test]
     runs-on: ubuntu-latest
     environment: production
     steps:
