@@ -30,3 +30,11 @@ jobs:
         with:
           name: simple-spring-api-jar
           path: target/*.jar
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: publish
+        run: |
+          echo 'publishing'
