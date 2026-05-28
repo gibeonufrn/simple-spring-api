@@ -1,19 +1,14 @@
-FROM maven:3.9.11-eclipse-temurin-21 AS build
+FROM maven:3.9.11-eclipse-temurin-21
 
 COPY pom.xml .
 COPY src ./src
 
 RUN mvn clean package
 
-#----------
-FROM eclipse-temurin:21-jre
-
 EXPOSE 8080
-
-VOLUME data
 
 ARG JAR_FILE=target/simple-spring-api-0.0.1-SNAPSHOT.jar
 
-COPY --from=build ${JAR_FILE} main.jar
+COPY ${JAR_FILE} main.jar
 
 ENTRYPOINT ["java","-jar","/main.jar"]
